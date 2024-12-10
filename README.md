@@ -65,7 +65,7 @@ This project is a **University Timetable Web Application** developed using **Fla
     
     INSERT INTO timetable (course_name, level, day, time)
     VALUES
-    		('Data Structures I', 'Undergraduate', 'Monday', '11:30 AM'),
+    	('Data Structures I', 'Undergraduate', 'Monday', '11:30 AM'),
         ('Database Applications', 'Undergraduate', 'Tuesday', '04:30 PM'),
         ('Principles of Programming', 'Undergraduate', 'Monday', '04:30 PM'),
         ('Operating Systems', 'Undergraduate', 'Tuesday', '02:30 PM'),
