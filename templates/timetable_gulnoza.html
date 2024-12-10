@@ -4,33 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timetable for {{ level }}</title>
+    <style>
+        body {
+            background-color: #003366;
+            color: #FFD700;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #FFD700;
+            color: #003366;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #003366;
+        }
+        table th {
+            background-color: #003366;
+            color: #FFD700;
+        }
+        table tr:nth-child(even) {
+            background-color: #E8E8E8;
+        }
+        table tr:hover {
+            background-color: #FFD700;
+        }
+    </style>
 </head>
 <body>
-    <h1>Timetable for {{ level }}</h1>
+    <div class="container">
+        <h1>Timetable for {{ level }}</h1>
+        
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
 
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
-
-    {% if data %}
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Course Name</th>
-                    <th>Day</th>
-                    <th>Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for course in data %}
-                <tr>
-                    <td>{{ course[0] }}</td>
-                    <td>{{ course[1] }}</td>
-                    <td>{{ course[2] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
+        {% if data %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in data %}
+                    <tr>
+                        <td>{{ course[0] }}</td>
+                        <td>{{ course[1] }}</td>
+                        <td>{{ course[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
 </body>
 </html>

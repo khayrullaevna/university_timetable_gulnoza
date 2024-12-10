@@ -3,19 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project of Gulnoza Gaybullaeva</title>
+    <title>University Timetable | Gulnoza Gaybullaeva</title>
+    <style>
+        body {
+            background-color: #003366;
+            color: #FFD700;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: #FFD700;
+            color: #003366;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        label, select, button {
+            font-size: 1rem;
+        }
+        select {
+            padding: 8px;
+            border: 1px solid #003366;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: #FFD700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #FFD700;
+            color: #003366;
+        }
+    </style>
 </head>
 <body>
-    <h1>Webster University Schedule</h1>
-    <p>Mini Project of Gulnoza Gaybullaeva</p>
-
-    <form action="/timetable" method="GET">
-        <label for="level">Select Level:</label>
-        <select name="level" id="level">
-            <option value="Undergraduate">Undergraduate</option>
-            <option value="Graduate">Graduate</option>
-        </select>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1>Webster University Schedule</h1>
+        <p>Mini Project by Gulnoza Gaybullaeva</p>
+        <form action="/timetable" method="GET">
+            <label for="level">Select Level:</label><br>
+            <select name="level" id="level" required>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Graduate">Graduate</option>
+            </select><br>
+            <button type="submit">View Timetable</button>
+        </form>
+    </div>
 </body>
 </html>
